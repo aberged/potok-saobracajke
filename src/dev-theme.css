@@ -1,0 +1,90 @@
+/* Dev only (imported by dev-tools.ts): the potok page's daisyUI themes
+   "system" and "dark" from potok-ide's assets/css/app.css (2026-11-08). In potok the frame
+   loads the page's CSS and follows its data-theme, so none of this is built. */
+
+:root {
+  color-scheme: light;
+  --color-base-100: oklch(100% 0 0);
+  --color-base-200: oklch(95% 0 0);
+  --color-base-300: oklch(90% 0 0);
+  --color-base-content: oklch(20% 0 0);
+  --color-primary: oklch(49.307% 0.179 258.418);
+  --color-primary-content: oklch(100% 0 0);
+  --color-secondary: oklch(64.476% 0.202 359.339);
+  --color-secondary-content: oklch(12.895% 0.04 359.339);
+  --color-accent: oklch(94.228% 0.189 105.306);
+  --color-accent-content: oklch(18.845% 0.037 105.306);
+  --color-neutral: oklch(21.778% 0 0);
+  --color-neutral-content: oklch(84.355% 0 0);
+  --color-info: oklch(68.475% 0.094 217.284);
+  --color-info-content: oklch(13.695% 0.018 217.284);
+  --color-success: oklch(46.949% 0.162 321.406);
+  --color-success-content: oklch(89.389% 0.032 321.406);
+  --color-warning: oklch(71.236% 0.159 52.023);
+  --color-warning-content: oklch(14.247% 0.031 52.023);
+  --color-error: oklch(51% 0.2 27);
+  --color-error-content: oklch(100% 0 0);
+  --radius-selector: 1rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --color-base-100: oklch(30.33% 0.016 252.42);
+    --color-base-200: oklch(25.26% 0.014 253.1);
+    --color-base-300: oklch(20.15% 0.012 254.09);
+    --color-base-content: oklch(97.807% 0.029 256.847);
+    --color-primary: oklch(82.433% 0.096 228.438);
+    --color-primary-content: oklch(24% 0.06 245);
+    --color-secondary: oklch(82.433% 0.096 228.438);
+    --color-secondary-content: oklch(24% 0.06 245);
+    --color-accent: oklch(82.433% 0.096 228.438);
+    --color-accent-content: oklch(24% 0.06 245);
+    --color-neutral: oklch(37% 0.044 257.287);
+    --color-neutral-content: oklch(98% 0.003 247.858);
+    --color-info: oklch(80% 0.1 232);
+    --color-info-content: oklch(24% 0.05 232);
+    --color-success: oklch(80% 0.12 178);
+    --color-success-content: oklch(24% 0.05 178);
+    --color-warning: oklch(83% 0.14 80);
+    --color-warning-content: oklch(24% 0.05 80);
+    --color-error: oklch(77% 0.14 22);
+    --color-error-content: oklch(22% 0.05 22);
+  }
+}
+
+html {
+  background-color: var(--color-base-100);
+  color: var(--color-base-content);
+}
+
+/* Stands in for the page's `.rich-content` (assets/css/app.css in potok-ide). */
+.rich-content {
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.rich-content > * + * {
+  margin-top: 0.75rem;
+}
+
+.rich-content h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.rich-content ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+}
+
+.rich-content a {
+  text-decoration: underline;
+}

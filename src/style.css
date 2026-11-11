@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+/* The dev mock and the dev tools are not in the build, and neither are the
+   tests, but Tailwind would take their words for classes and add them to the
+   build's CSS. */
+@source not "./potok-dev.ts";
+@source not "./dev-tools.ts";
+@source not "./**/*.test.ts";
+
+/*! daisyUI | MIT License | https://daisyui.com */
+/* daisyUI with the `d-` prefix and no themes: the colours come from the potok
+   page's theme (the frame follows its data-theme), and src/dev-theme.css
+   stands in for it in dev. */
+@plugin "daisyui" {
+  themes: false;
+  prefix: "d-";
+}
+
+/* The frame loads the page's CSS, which paints the body. The app sits on the
+   background of the group page instead, as a description in text does. */
+html,
+body {
+  background: transparent;
+}
+
+.ps-root {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 1rem;
+  color: var(--color-base-content);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.ps-card {
+  background: var(--color-base-100);
+  border-color: color-mix(in oklab, var(--color-base-300) 75%, transparent);
+}
+
+.ps-tile {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.75rem;
+  background: color-mix(in oklab, var(--color-primary) 10%, transparent);
+  color: var(--color-primary);
+}
+
+.ps-tile-small {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 0.5rem;
+}
+
+.ps-drop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem 1rem;
+  border: 1px dashed color-mix(in oklab, var(--color-base-content) 25%, transparent);
+  border-radius: 1rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.ps-drop:hover,
+.ps-drop:focus-within {
+  border-color: var(--color-primary);
+  background: color-mix(in oklab, var(--color-primary) 5%, transparent);
+}
+
+.ps-stats {
+  border: 1px solid color-mix(in oklab, var(--color-base-300) 75%, transparent);
+  background: var(--color-base-100);
+}
+
+.ps-dot {
+  display: inline-block;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 999px;
+}
+
+.ps-pin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 999px;
+  color: #fff;
+}
+
+.ps-reason {
+  border: 1px solid color-mix(in oklab, var(--color-base-300) 75%, transparent);
+}
+
+.ps-example code {
+  display: block;
+  overflow-wrap: anywhere;
+  opacity: 0.8;
+}
+
+.ps-sample {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid color-mix(in oklab, var(--color-base-300) 75%, transparent);
+  border-radius: 0.75rem;
+}
+
+.ps-rich {
+  font-size: 14px;
+}
